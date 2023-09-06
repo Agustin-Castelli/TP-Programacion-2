@@ -8,8 +8,18 @@ libroAgregado = {}
 
 def nuevo_libro():
     codigoNuevo = generar()
-    cantEjemplares = int(input("Cuantos ejemplares desea agregar?"))
-    cantPrestados = int(input("Cuantos ejemplares fueron prestados?"))
+    while True:
+        cantEjemplares = int(input("Cuantos ejemplares desea agregar?"))
+        if cantEjemplares < 0:
+            print("Cantidad inválida, ingrese un número positivo.")
+        else:
+            break
+    while True:
+        cantPrestados = int(input("Cuantos ejemplares fueron prestados?"))
+        if cantPrestados < 0:
+            print("Cantidad inválida, ingrese un número positivo.")
+        else:
+            break
     nuevoTitulo = str(input("Ingrese el nombre del libro"))
     nuevoAutor = str(input("Ingrese el nombre del autor"))
     libroAgregado = {'cod': codigoNuevo, 'cant_ej_ad': cantEjemplares, 'cant_ej_pr': cantPrestados, "titulo": nuevoTitulo, "autor": nuevoAutor}
